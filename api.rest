@@ -1,0 +1,42 @@
+# @host = docker.for.mac.localhost:8080
+@host = localhost:8080
+
+// Create Product
+POST http://{{host}}/api/products HTTP/1.1
+content-type: application/json
+    
+{
+    "name": "test-product",
+    "description": "random-description",
+    "price": 100.00
+}
+
+###
+
+// Get Product By ID
+GET http://{{host}}/api/products/23 HTTP/1.1
+content-type: application/json
+
+###
+
+// Get All Products
+GET http://{{host}}/api/products/ HTTP/1.1
+content-type: application/json
+
+###
+
+// Update Product
+PUT http://{{host}}/api/products/23 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "updated-product",
+    "description": "random-description-updated",
+    "price": 100.00
+}
+
+###
+
+// Delete Product
+DELETE http://{{host}}/api/products/23 HTTP/1.1
+content-type: application/json
